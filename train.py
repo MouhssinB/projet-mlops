@@ -6,6 +6,7 @@ from sklearn.linear_model import LogisticRegression
 df_cust = pd.read_csv(r"data/customer_churn.csv")
 df_cust_1 = df_cust[['Age' , 'Total_Purchase' , 'Account_Manager' , 'Years' ,'Num_Sites', 'Churn']].copy()
 
+
 # Split the data into training and testing sets
 X = df_cust_1.drop(['Churn' , 'Total_Purchase'], axis=1)  # Features
 y = df_cust_1['Churn']  # Target variable

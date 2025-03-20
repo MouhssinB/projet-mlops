@@ -3,7 +3,7 @@ name: CI/CD for Churn Prediction
 on:
   push:
     branches:
-      - main
+      - master
     paths:
       - train.py
 

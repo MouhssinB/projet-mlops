@@ -26,7 +26,7 @@ RUN python train.py
 #RUN pytest test_train.py test_app.py -v
 
 # Exposer le port pour Flask
-EXPOSE 5012
+EXPOSE 5000
 ENV PYTHONPATH=/app
 
 # Commande pour lancer l'application

@@ -3,7 +3,6 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 
-
 df_cust = pd.read_csv(r"data/customer_churn.csv")
 df_cust_1 = df_cust[['Age' , 'Total_Purchase' , 'Account_Manager' , 'Years' ,'Num_Sites', 'Churn']].copy()
 

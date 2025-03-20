@@ -7,6 +7,11 @@ app = Flask(__name__)
 # Load the trained model
 model = joblib.load(r'data/model.pickle')
 
+# Route principale pour afficher l'interface utilisateur
+@app.route('/', methods=['GET'])
+def home():
+    return render_template('index.html')
+
 @app.route('/predict', methods=['POST', 'OPTIONS'])
 def predict():
   """

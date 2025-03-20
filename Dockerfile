@@ -11,6 +11,7 @@ COPY train.py .
 COPY test_app.py .
 COPY test_train.py .
 COPY data/customer_churn.csv ./data/
+COPY data/model.pickle ./data/
 COPY templates/index.html ./templates/
 
 # Installer les dépendances

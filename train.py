@@ -20,7 +20,6 @@ model_2 = LogisticRegression()
 # Entraînez le modèle sur les données d'entraînement
 model_2.fit(X_train, y_train)
 
-
 # Faites des prédictions sur l'ensemble de test
 y_pred = model_2.predict(X_test)
 

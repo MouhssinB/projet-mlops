@@ -129,7 +129,7 @@
             formData.append('Num_Sites', document.getElementById('num_sites').value);
             
             // Appeler l'API avec FormData
-            fetch('http://localhost:5000/predict', {
+            fetch('http://127.0.0.1:5000/predict', {
                 method: 'POST',
                 body: formData,
             })

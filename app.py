@@ -6,10 +6,6 @@ app = Flask(__name__)
 
 # Load the trained model
 model = joblib.load(r'data/model.pickle')
-@app.route('/')
-def home():
-    return "Bienvenue sur l'API de prédiction de churn !", 200
-
 
 @app.route('/predict', methods=['POST', 'OPTIONS'])
 def predict():
@@ -60,4 +56,5 @@ def predict():
     return response, 500
 
 if __name__ == '__main__':
-  app.run(debug=True)  # Run the Flask app in debug mode
+  app.run(host='0.0.0.0', port = 5000 , debug=True)  # Run the Flask app in debug mode
+  #app.run(debug=True)  # Run the Flask app in debug mode

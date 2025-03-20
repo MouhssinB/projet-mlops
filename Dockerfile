@@ -11,6 +11,7 @@ COPY train.py .
 COPY test_app.py .
 COPY test_train.py .
 COPY data/customer_churn.csv ./data/
+COPY templates/index.html ./templates/
 
 # Installer les dépendances
 RUN pip install --no-cache-dir -r requirements.txt
@@ -25,7 +26,8 @@ RUN python train.py
 #RUN pytest test_train.py test_app.py -v
 
 # Exposer le port pour Flask
-EXPOSE 5000
+EXPOSE 5012
+ENV PYTHONPATH=/app
 
 # Commande pour lancer l'application
 CMD ["python", "app.py"] 

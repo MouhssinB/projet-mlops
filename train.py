@@ -24,6 +24,7 @@ model_2.fit(X_train, y_train)
 # Faites des prédictions sur l'ensemble de test
 y_pred = model_2.predict(X_test)
 
+
 # Calculate evaluation metrics
 accuracy = accuracy_score(y_test, y_pred)
 precision = precision_score(y_test, y_pred)

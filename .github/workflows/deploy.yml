@@ -25,7 +25,7 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y python3-pip
         pip3 install awsebcli --upgrade --user
-        export PATH=$PATH:$HOME/.local/bin
+        echo "$HOME/.local/bin" >> $GITHUB_PATH  # Ajout du chemin dans PATH
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v3
@@ -38,10 +38,9 @@ jobs:
       run: |
         docker build -t churn-app .
 
-    
     - name: Run Tests in Docker
       run: |
-        docker run churn-app pytest -v
+        docker run --rm churn-app pytest -v || exit 1  # Assure que l'étape échoue si les tests échouent
 
     - name: Initialize Elastic Beanstalk Application
       run: |

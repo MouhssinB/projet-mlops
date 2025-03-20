@@ -13,7 +13,6 @@ y = df_cust_1['Churn']  # Target variable
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=12)
 
-
 # Créez une instance du modèle de régression logistique
 model_2 = LogisticRegression()
 

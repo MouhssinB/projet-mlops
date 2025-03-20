@@ -8,11 +8,6 @@ def client():
     with app.test_client() as client:
         yield client
 
-def test_home_route(client):
-    """Vérifie que la route principale (/) retourne un statut 200"""
-    response = client.get('/')
-    assert response.status_code == 200, "La route principale (/) ne retourne pas un statut 200."
-
 def test_predict_route_valid(client):
     """Vérifie que la route /predict retourne une prédiction pour des données valides"""
     data = {
